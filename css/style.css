@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  }
+  
+  body {
+    box-sizing: border-box;
+    color: #484848;
+  }
+
+  .wrapper {
+    font-family: 'Roboto', sans-serif;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: .8rem 1.6rem;
+  }
+
+  .app-title {
+    color: #0095b6;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .info {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .deck-label {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  .deck-form {
+    width: 100%;
+    display: block;
+  }
+  
+  .deck-input {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    height: 10rem;
+    border-radius: .3rem;
+  }
+
+  .deck-button {
+    display: block;
+    background-color: #0095b6;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    padding: .5rem;
+    margin-top: .8rem;
+    width: 100%;
+  }
+  
+  .trademark {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }

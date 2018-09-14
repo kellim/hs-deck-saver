@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HS Deck Saver</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Hearthstone® Deck Saver</title>
 </head>
 <body>
-    
+  <div class="wrapper">
+    <div class="main" role="main">
+      <h1 class="app-title">Hearthstone Deck Saver</h1>
+      <p class="info">Copy a Hearthstone® deck from within the game and submit it below to save it to local storage in your browser.</p>
+      <div class="save-deck">
+        <form class="deck-form js-deck-form">
+          <label class="deck-label" for="deck-text-input">Paste Hearthstone Deck:</label>
+          <textarea class="deck-input js-deck-input" name="deck-input" id="deck-input" required></textarea>
+          <button class="deck-button js-deck-button">Save Deck!</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="trademark">Hearthstone is a trademark or registered trademark of Blizzard Entertainment, Inc., in the U.S. and/or other countries.</p>
+    </div>
+  </div>
 </body>
 </html>
