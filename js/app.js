@@ -7,11 +7,18 @@ deckForm.addEventListener('submit', event => {
 });
 
 const deckList = {
-  deckList: [],
+  deckList: localStorage.getItem('deckList') ? JSON.parse(localStorage.getItem('deckList')) : [],
 
   addDeck: function(deckInput) {
     const deckName = deckInput.split('\n')[0].slice(4);
-    this.deckList.push({name: deckName, body: deckInput});
+    const isNameUsed = this.deckList.some(deck => deck.name === deckName);
+    if (!isNameUsed) {
+      console.log('pushing deck', deckName);
+      this.deckList.push({name: deckName, body: deckInput});
+      localStorage.setItem('deckList', JSON.stringify(this.deckList));
+    } else {
+      console.log('The deck is already in local storage');
+    }
   }
 }
 
@@ -23,4 +30,3 @@ function processDeckForm() {
     console.log('not a valid deck');
   }
 }
-
