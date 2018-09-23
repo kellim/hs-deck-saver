@@ -23,6 +23,17 @@ const deckSaver = {
     }
   },
 
+  deleteDeck: function(deckToDelete) {
+    const deckBody = deckToDelete.querySelector('.deck-body');
+    const deckName = deckBody.textContent.split('\n')[0].slice(4);
+    console.log('deckToDelete', deckToDelete);
+    this.deckList = this.deckList.filter(deck => {
+      return deck.name !== deckName;
+    });
+    localStorage.setItem('deckList', JSON.stringify(this.deckList));
+    deckToDelete.parentNode.removeChild(deckToDelete);
+  },
+
   listDecks: function() {
     this.deckList.forEach(deck => {
       this.createListItem(deck);
@@ -53,7 +64,17 @@ const deckSaver = {
     // using aria-controls. Works on modern screen readers.
     link.setAttribute('aria-controls', deckBodyId);    
     div.appendChild(bodyText);
-   
+
+    const deleteBtn = document.createElement('button');
+    const deleteIcon = document.createElement('i');
+    const deleteBtnText = document.createTextNode('Delete Deck');
+
+    deleteBtn.classList.add('delete-button', 'js-delete-button');
+    deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
+    deleteBtn.appendChild(deleteIcon);
+    deleteBtn.appendChild(deleteBtnText);
+    div.appendChild(deleteBtn);  
+       
     li.appendChild(link);
     li.appendChild(div);
     this.deckListEl.appendChild(li);
@@ -62,9 +83,13 @@ const deckSaver = {
   addEventListeners: function() {
     this.deckListEl.addEventListener('click', e => {
       e.preventDefault();
-      console.log(e.target);
-      if (e.target.tagName === 'A' || e.target.tagName == 'I') {
-        // If the a tag isn't clicked on, the parent node should be the a tag
+      console.log(e.target.tagName);
+      if (e.target.tagName === 'BUTTON' || e.target.parentNode.tagName === 'BUTTON') {
+        const deck = e.target.tagName === 'BUTTON' ? e.target.parentNode : e.target.parentNode.parentNode;
+        // Pass the li to deleteDeck()
+        this.deleteDeck(deck.parentNode);
+      } else if (e.target.tagName === 'A' || e.target.parentNode.tagName == 'A') {
+        // If the a tag isn't clicked on, the parent node of i should be the a tag
         const linkEl = e.target.tagName === 'A' ? e.target : e.target.parentNode;
         this.toggleDeckBody(linkEl);
       }

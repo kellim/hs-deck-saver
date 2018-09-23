@@ -80,6 +80,7 @@ html {
 
   .deck-link {
     text-decoration: none;
+    color: #00008b;
     font-size: 1.8rem;
     padding: .5rem;
     margin-left: -.5rem;
@@ -99,6 +100,17 @@ html {
     padding: 1rem 2rem;
     margin-top: .5rem;
     overflow-x: auto;
+  }
+
+  .delete-button {
+    display: block;
+    padding: .3rem .5rem;
+    margin-top: .5rem;
+    font-size: 1.1rem;
+  }
+
+  .delete-icon {
+    padding-right: .3rem;
   }
 
   .expand-collapse-icon {
