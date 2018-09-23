@@ -33,27 +33,27 @@ const deckSaver = {
     const li  = document.createElement('li');
     const link = document.createElement('a');
     const linkText = document.createTextNode(deck.name);
-
     li.classList.add('deck-list-item');
     link.appendChild(linkText);
     link.setAttribute('href', '#');
     link.classList.add('deck-link', 'js-deck-link');
     link.setAttribute('aria-expanded', 'false');
-    
-    const span = document.createElement('span');
-    span.classList.add('expand-collapse-icon', 'js-expand-collapse-icon', 'fa', 'fa-caret-down');
-    link.appendChild(span);
+
+    const expandCollapseIcon = document.createElement('i');
+    expandCollapseIcon.classList.add('expand-collapse-icon', 'js-expand-collapse-icon', 'fa', 'fa-caret-down');
+    link.appendChild(expandCollapseIcon);
 
     const div = document.createElement('div');
+    // Spaces replaced with '-' as you cannot have spaces in ids
     const deckBodyId = deck.name.replace(/\s+/g, '-').toLowerCase() + '-body';
     div.id = deckBodyId;
     div.classList.add('deck-body', 'js-deck-body');
     const bodyText = document.createTextNode(deck.body);
-    div.appendChild(bodyText);
     // Associate id of element being collapsed with element that collapses them
     // using aria-controls. Works on modern screen readers.
-    link.setAttribute('aria-controls', deckBodyId); 
-    
+    link.setAttribute('aria-controls', deckBodyId);    
+    div.appendChild(bodyText);
+   
     li.appendChild(link);
     li.appendChild(div);
     this.deckListEl.appendChild(li);
@@ -63,10 +63,9 @@ const deckSaver = {
     this.deckListEl.addEventListener('click', e => {
       e.preventDefault();
       console.log(e.target);
-      if (e.target.tagName === 'A' || e.target.tagName == 'SPAN') {
-        // If span is clicked on, get its parent a tag.
+      if (e.target.tagName === 'A' || e.target.tagName == 'I') {
+        // If the a tag isn't clicked on, the parent node should be the a tag
         const linkEl = e.target.tagName === 'A' ? e.target : e.target.parentNode;
-        console.log('linkEl', linkEl)
         this.toggleDeckBody(linkEl);
       }
     });
@@ -82,7 +81,6 @@ const deckSaver = {
     const linkEl = deckEl.parentNode.querySelector('.deck-link');
     const expandCollapseIcon = linkEl.querySelector('.js-expand-collapse-icon');
     
-    console.log('ecicon', expandCollapseIcon);
     if (window.getComputedStyle(deckBodyEl).display === 'none') {
       deckBodyEl.style.display = 'block';
       expandCollapseIcon.classList.replace('fa-caret-down', 'fa-caret-up');

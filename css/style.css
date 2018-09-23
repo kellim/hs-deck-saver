@@ -81,7 +81,8 @@ html {
   .deck-link {
     text-decoration: none;
     font-size: 1.8rem;
-    padding: .5rem 0;
+    padding: .5rem;
+    margin-left: -.5rem;
   }
 
   .deck-link:hover {
@@ -97,6 +98,7 @@ html {
     background-color: #f5f5f5;
     padding: 1rem 2rem;
     margin-top: .5rem;
+    overflow-x: auto;
   }
 
   .expand-collapse-icon {
