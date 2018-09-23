@@ -26,7 +26,6 @@ const deckSaver = {
   deleteDeck: function(deckToDelete) {
     const deckBody = deckToDelete.querySelector('.deck-body');
     const deckName = deckBody.textContent.split('\n')[0].slice(4);
-    console.log('deckToDelete', deckToDelete);
     this.deckList = this.deckList.filter(deck => {
       return deck.name !== deckName;
     });
@@ -73,6 +72,9 @@ const deckSaver = {
     deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
     deleteBtn.appendChild(deleteIcon);
     deleteBtn.appendChild(deleteBtnText);
+    // Put button on its own line
+    const newLine = document.createTextNode('\n');
+    div.appendChild(newLine);
     div.appendChild(deleteBtn);  
        
     li.appendChild(link);
