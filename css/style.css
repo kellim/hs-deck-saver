@@ -104,8 +104,8 @@ html {
 
   .delete-button {
     display: block;
-    padding: .5rem 1rem;
-    margin-top: 1rem;
+    padding: 1rem 2rem;
+    margin-top: .5rem;
     font-size: 1.1rem;
     background-color: #e64942;
     color: #fff;
