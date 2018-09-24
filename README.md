@@ -10,7 +10,7 @@ Test it out at http://hsdecksaver.surge.sh/
 
 **[View full size demo](https://github.com/kellim/hs-deck-saver/blob/master/demo/demo.gif)**
 
-## Run Project locally
+## Run Project Locally
 
 Open `index.html` in a web browser to run the project locally.
 
