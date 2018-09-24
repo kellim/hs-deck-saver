@@ -32,6 +32,8 @@ This is a small personal project and I plan to keep this app simple. If you'd li
 
 Code is licensed under the MIT License. 
 
+See [LICENSE](https://github.com/kellim/hs-deck-saver/blob/master/LICENSE)
+
 Note that if you use Blizzard trademarks in association with the code, it's up to you to follow their policies.
 
 ## Trademark Info
