@@ -23,14 +23,28 @@ const deckSaver = {
     }
   },
 
-  deleteDeck: function(deckToDelete) {
-    const deckBody = deckToDelete.querySelector('.deck-body');
-    const deckName = deckBody.textContent.split('\n')[0].slice(4);
+  deleteDeck: function(deckToDelete, deckName) {
     this.deckList = this.deckList.filter(deck => {
       return deck.name !== deckName;
     });
     localStorage.setItem('deckList', JSON.stringify(this.deckList));
     deckToDelete.parentNode.removeChild(deckToDelete);
+  },
+
+  confirmDelete: function(deckToDelete) {
+    const deckBody = deckToDelete.querySelector('.deck-body');
+    const deckName = deckBody.textContent.split('\n')[0].slice(4);
+    swal({
+      title: `Are you sure you want to delete ${deckName}?`,
+      text: 'Deleting a deck is permanent. There\'s no way to get it back!',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true
+    }).then((confirmedDelete) => {
+      if (confirmedDelete) {
+        this.deleteDeck(deckToDelete, deckName);
+      }
+    }) 
   },
 
   listDecks: function() {
@@ -89,7 +103,7 @@ const deckSaver = {
       if (e.target.tagName === 'BUTTON' || e.target.parentNode.tagName === 'BUTTON') {
         const deck = e.target.tagName === 'BUTTON' ? e.target.parentNode : e.target.parentNode.parentNode;
         // Pass the li to deleteDeck()
-        this.deleteDeck(deck.parentNode);
+        this.confirmDelete(deck.parentNode);
       } else if (e.target.tagName === 'A' || e.target.parentNode.tagName == 'A') {
         // If the a tag isn't clicked on, the parent node of i should be the a tag
         const linkEl = e.target.tagName === 'A' ? e.target : e.target.parentNode;
