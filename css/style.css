@@ -15,6 +15,10 @@ html {
     color: #484848;
   }
 
+  .main {
+    min-height: calc(100vh - 6rem);
+  }
+
   .wrapper {
     font-family: 'Roboto', sans-serif;
     max-width: 90rem;
