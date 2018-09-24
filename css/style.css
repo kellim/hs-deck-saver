@@ -126,6 +126,11 @@ html {
     color: #fff;
   }
   
+  .error {
+    color: #e64942;
+    font-size: 1.6rem;
+    padding-top: .5rem;
+  }
   
   .trademark {
     text-align: center;

@@ -4,6 +4,7 @@ const deckSaver = {
   deckInput: document.querySelector('.js-deck-input'),
   deckListEl: document.querySelector('.js-deck-list ul'),
   deckList: localStorage.getItem('deckList') ? JSON.parse(localStorage.getItem('deckList')) : [],
+  errorEl: document.querySelector('.js-error'),
 
   init: function() {
     this.listDecks();
@@ -18,8 +19,10 @@ const deckSaver = {
       this.deckList.push(newDeckObj);
       this.createListItem(newDeckObj);
       localStorage.setItem('deckList', JSON.stringify(this.deckList));
+      this.deckInput.value = '';
+      this.errorEl.textContent = '';
     } else {
-      console.log('The deck is already in local storage');
+      this.errorEl.textContent = 'Error: Unable to save deck. Deck name is already taken.';
     }
     this.toggleDeckListHeading();
   },
@@ -139,7 +142,6 @@ const deckSaver = {
   toggleDeckListHeading: function() {
     const deckListHeading = document.querySelector('.js-deck-list-heading');
     if (window.getComputedStyle(deckListHeading).display === 'none' && this.deckList.length >= 1) {
-      console.log('BLOCK!')
       deckListHeading.style.display = 'block';
     } else if (this.deckList.length === 0) {
       deckListHeading.style.display = 'none';
@@ -151,9 +153,8 @@ const deckSaver = {
     // TODO: Make sure deck name is not the same as deck body ID - check for lowercase w/ dashes.
     if (this.deckInput.value.startsWith('### ')) {
       this.addDeck(this.deckInput.value);
-      this.deckInput.value = '';
     } else {
-      console.log('not a valid deck');
+      this.errorEl.textContent = 'Error: The deck is not valid. Please copy a deck from within the game and try again.';
     }
   }
 }
