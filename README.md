@@ -14,6 +14,8 @@ Test it out at http://hsdecksaver.surge.sh/
 
 Open `index.html` in a web browser to run the project locally.
 
+Hearthstone Wiki has some info on [deck importing](https://hearthstone.gamepedia.com/Deck_Importing) which includes how to copy a deck from within Hearthstone. Make sure to paste the full text of what was copied and not just the code for the deck into Hearthstone Deck Saver.
+
 ## FAQs 
 
 Q: Why create this app?  
