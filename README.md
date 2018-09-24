@@ -6,9 +6,9 @@ Save copied Hearthstone® decks to the browser's local storage.
 
 Test it out at http://hsdecksaver.surge.sh/
 
-And here's an animated GIF demo: 
+![demo](https://github.com/kellim/hs-deck-saver/blob/master/demo/demo-434x600.gif)   
 
-![demo](https://github.com/kellim/hs-deck-saver/blob/master/demo/demo.gif)   
+**[View full size demo](https://github.com/kellim/hs-deck-saver/blob/master/demo/demo.gif)**
 
 ## Run Project locally
 
