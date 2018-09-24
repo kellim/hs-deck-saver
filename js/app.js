@@ -21,6 +21,7 @@ const deckSaver = {
     } else {
       console.log('The deck is already in local storage');
     }
+    this.toggleDeckListHeading();
   },
 
   deleteDeck: function(deckToDelete, deckName) {
@@ -29,6 +30,7 @@ const deckSaver = {
     });
     localStorage.setItem('deckList', JSON.stringify(this.deckList));
     deckToDelete.parentNode.removeChild(deckToDelete);
+    this.toggleDeckListHeading();
   },
 
   confirmDelete: function(deckToDelete) {
@@ -51,6 +53,7 @@ const deckSaver = {
     this.deckList.forEach(deck => {
       this.createListItem(deck);
     });
+    this.toggleDeckListHeading();
   },
 
   createListItem: function(deck) {
@@ -130,6 +133,16 @@ const deckSaver = {
       deckBodyEl.style.display = 'none';
       expandCollapseIcon.classList.replace('fa-caret-up', 'fa-caret-down');
       linkEl.setAttribute('aria-expanded', 'false');
+    }
+  },
+
+  toggleDeckListHeading: function() {
+    const deckListHeading = document.querySelector('.js-deck-list-heading');
+    if (window.getComputedStyle(deckListHeading).display === 'none' && this.deckList.length >= 1) {
+      console.log('BLOCK!')
+      deckListHeading.style.display = 'block';
+    } else if (this.deckList.length === 0) {
+      deckListHeading.style.display = 'none';
     }
   },
 

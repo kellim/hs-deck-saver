@@ -71,6 +71,7 @@ html {
   .deck-list-heading {
     font-size: 1.8rem;
     padding-top: 1rem;
+    display: none;
   }
 
   .deck-list-item {
