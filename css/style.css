@@ -104,9 +104,13 @@ html {
 
   .delete-button {
     display: block;
-    padding: .3rem .5rem;
-    margin-top: .5rem;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
     font-size: 1.1rem;
+    background-color: #e64942;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
   }
 
   .delete-icon {
