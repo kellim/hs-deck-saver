@@ -1,6 +1,6 @@
 # Sample Decks
 
-Here are some sample decks you can use to try [Hearthstone Deck Saver](https://hsdecksaver.surge.sh) without copying a deck from the game:
+Here are some sample decks you can use to try Hearthstone Deck Saver without copying a deck from the game:
 
 ## Sample Deck 1
 ```
