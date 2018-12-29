@@ -59,3 +59,35 @@ AAECAZ8FAA9G+gH7AdwDigavB8bHAtblAvnsAubuAsXzArT2Apj7ApGAA/+AAwA=
 # 
 # To use this deck, copy it to your clipboard and create a new deck in Hearthstone
 ```
+
+## Sample Deck 3
+
+```
+### MAGE CLASS CARDS
+# Class: Mage
+# Format: Standard
+# Year of the Raven
+#
+# 2x (1) Arcane Missiles
+# 2x (1) Daring Fire-Eater
+# 2x (1) Fire Fly
+# 2x (2) Arcane Explosion
+# 2x (2) Frostbolt
+# 2x (2) Spirit of the Dragonhawk
+# 2x (3) Cinderstorm
+# 2x (3) Pyromaniac
+# 1x (3) Stargazer Luna
+# 2x (4) Fireball
+# 2x (4) Polymorph
+# 2x (4) Vex Crow
+# 1x (5) Curio Collector
+# 1x (6) Toki, Time-Tinker
+# 2x (7) Flamestrike
+# 1x (9) Sleepy Dragon
+# 1x (9) Ysera
+# 1x (10) Pyroblast
+# 
+AAECAf0EBr8Iognm0wLP7wLF8gLu9gIMTbsCvwO0BJYF7AfrwgL77ALC8wKkhwOthwPNiQMA
+# 
+# To use this deck, copy it to your clipboard and create a new deck in Hearthstone
+```
