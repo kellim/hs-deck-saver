@@ -1,10 +1,10 @@
 # Hearthstone Deck Saver
 
+This app is no longer being maintained and I have not played Hearthstone in some time. At least they raised the amount of decks you can have from 18 to 30. 
+
 Save copied Hearthstone® decks to the browser's local storage. 
 
 ## DEMO
-
-Test it out at https://decksaver.kelli.app
 
 ![demo](https://github.com/kellim/hs-deck-saver/blob/master/demo/demo-434x600.gif)   
 
@@ -31,10 +31,6 @@ The app saves the data for your decks to local storage which means it is saved t
 Q: Can I export or backup my deck data?
 
 A: Not yet! Let me know if you're interested in that.
-
-## Contributions
-
-This is a small personal project and I plan to keep this app simple. If you'd like to contribute, please make a comment with your intention in the appropriate issue if one exists or create a new issue for discussion.
 
 ## License
 
